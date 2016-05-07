@@ -211,14 +211,14 @@ class Api {
             });
 
             // Remove empty data.
-            if ($this->config['removeEmptyData'] && empty($response['data']))
+            if (empty($response['data']))
             {
                 unset($response['data']);
             }
         }
 
         // Header response.
-        $header = ($this->config['httpResponse']) ? $code : 200;
+        $header = ($code) ? $code : 200;
 
         return Response::make($response, $header);
     }
