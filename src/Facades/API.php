@@ -2,6 +2,16 @@
 
 use Illuminate\Support\Facades\Facade;
 
+/**
+ * Class API
+ * @package Teepluss\Api\Facades
+ *
+ * @method static mixed delete() delete(string $uri)
+ * @method static mixed get() get(string $uri)
+ * @method static mixed patch() patch(string $uri, array $parameters)
+ * @method static mixed post() post(string $uri, array $parameters)
+ * @method static mixed put() put(string $uri, array $parameters)
+ */
 class API extends Facade {
 
     /**
