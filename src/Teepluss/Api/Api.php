@@ -1,4 +1,5 @@
-<?php namespace Teepluss\Api;
+<?php
+namespace Teepluss\Api;
 
 use Guzzle\Http\Client;
 use Illuminate\Http\Request;
@@ -99,7 +100,7 @@ class Api {
      * @param Repository $config  $router
      * @param Router     $router
      * @param Request    $request
-     * @param Client     $remote
+     * @param Client     $remoteClient
      */
     public function __construct(Repository $config, Router $router, Request $request, Client $remoteClient)
     {
@@ -225,7 +226,7 @@ class Api {
     /**
      * Configure remote client for http request.
      *
-     * @param array $configuration
+     * @param array $configurations
      *
      * array
      *(
@@ -353,6 +354,9 @@ class Api {
 
     /**
      * Alias call method.
+     *
+     * @param string $method
+     * @param array $parameters
      *
      * @return mixed
      */
