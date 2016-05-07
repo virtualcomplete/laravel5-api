@@ -10,6 +10,16 @@ use Illuminate\Support\Facades\Response;
 use Symfony\Component\Debug\Exception\FatalErrorException;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
+/**
+ * Class Api
+ * @package Teepluss\Api
+ *
+ * @method mixed delete() delete(string $uri)
+ * @method mixed get() get(string $uri)
+ * @method mixed patch() patch(string $uri, array $parameters)
+ * @method mixed post() post(string $uri, array $parameters)
+ * @method mixed put() put(string $uri, array $parameters)
+ */
 class Api {
 
     /**
@@ -362,7 +372,7 @@ class Api {
      */
     public function __call($method, $parameters = array())
     {
-        if (in_array($method, array('get', 'post', 'put', 'delete')))
+        if (in_array($method, array('get', 'post', 'put', 'delete', 'patch')))
         {
             $uri = array_shift($parameters);
 
